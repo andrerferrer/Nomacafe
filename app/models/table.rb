@@ -2,6 +2,6 @@ class Table < ApplicationRecord
   SEAT = ["chair", "sofa", "stool"]
   belongs_to :cafe
   has_many :bookings
-  validates :spots, :min_credits presence: true
+  validates :spots, :min_credits, presence: true
   validates :seat, inclusion: {in: SEAT}
 end

@@ -1,0 +1,22 @@
+<% if @cafe.photo.attached? %>
+    <%=cl_image_path(@cafe.photo.key) %>
+<% else %>
+<img src="https://phantom-marca.unidadeditorial.es/6325b621b1ec481729f0865211d0ed3f/resize/1320/f/jpg/assets/multimedia/imagenes/2020/11/25/16062940399517.jpg">
+<% end %>
+<%= @cafe.name %>
+<%= @cafe.location %>
+
+<% @tables.each do |table| %>
+<li>
+  <%= table.name %>
+  <%= table.spots %>
+  <%= table.seat %>
+  <%= table.min_credits %>
+  <%= link_to "Edit Table", edit_cafe_table_path([table.cafe, table])  %>
+  <%= link_to "Delete Table", [table.cafe, table], method: :delete %>
+</li>
+<% end %>
+
+<%= link_to "Add a new table", new_cafe_table_path(@cafe) %>
+
+
