@@ -1,6 +1,6 @@
 class CafesController < ApplicationController
 
-  before_action :set_cafe, only: [:show, :edit, :update, :destroy]
+  before_action :set_cafe, only: [:edit, :update, :destroy]
 
   def index
     @cafes = Cafe.all
@@ -9,6 +9,8 @@ class CafesController < ApplicationController
 
 
   def show
+    @booking = Booking.new
+    @cafe = Cafe.find(params[:id])
   end
 
   def new
@@ -24,6 +26,7 @@ class CafesController < ApplicationController
       redirect_to @cafe, notice: "Your Cafe has been created!"
     else
       render :new
+    end
   end
 
   def edit
@@ -32,10 +35,10 @@ class CafesController < ApplicationController
 
   def update
     if @cafe.update(cafe_params)
-      redirect_to @cafe. notice: "Your Cafe has been updated"
+      redirect_to @cafe, notice: "Your Cafe has been updated"
     else
     render :edit
-   end
+    end
 
 
   end
