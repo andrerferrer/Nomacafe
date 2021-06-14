@@ -1,4 +1,5 @@
 class CafesController < ApplicationController
+
   before_action :set_cafe, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -6,10 +7,12 @@ class CafesController < ApplicationController
 
   end
 
+
   def show
   end
 
   def new
+
     @cafe = Cafe.new
 
   end
@@ -34,6 +37,7 @@ class CafesController < ApplicationController
     render :edit
    end
 
+
   end
 
   def destroy
@@ -46,7 +50,9 @@ class CafesController < ApplicationController
   end
 
   def cafe_params
+
     params.require(:cafe).permit(:name, :location, :photo)
 
   end
+
 end
