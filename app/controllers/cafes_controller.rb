@@ -1,4 +1,5 @@
 class CafesController < ApplicationController
+
   before_action :skip_pundit?
   before_action :set_cafe, only: [:show, :edit, :update, :destroy]
 
@@ -20,6 +21,7 @@ class CafesController < ApplicationController
 
 
   def show
+
     @tables = @cafe.tables
 
 
@@ -52,7 +54,9 @@ class CafesController < ApplicationController
       redirect_to @cafe, notice: "Your Cafe has been updated"
     else
     render :edit
-   end
+    end
+
+
   end
 
   def destroy
