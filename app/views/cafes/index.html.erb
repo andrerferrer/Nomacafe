@@ -11,25 +11,24 @@
   </div>
 </div>
 
+<div id="list-view" class="ninja">
   <% @cafes.each do |cafe| %>
-  <div id="list-view">
-  <div class="card-trip">
-    <% if cafe.photo.attached? %>
-      <img src="<%= cl_image_path cafe.photo.key %>" />
-    <% else %>
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-    <% end %>
+    <div class="card-trip">
+      <% if cafe.photo.attached? %>
+        <img src="<%= cl_image_path cafe.photo.key %>" />
+      <% else %>
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <% end %>
 
-    <div class="card-trip-infos">
-      <div>
-        <h2> <%= link_to "#{cafe.name}", cafe_path(cafe) %></h2>
-        <p> <%= cafe.location %></p>
+      <div class="card-trip-infos">
+        <div>
+          <h2> <%= link_to "#{cafe.name}", cafe_path(cafe) %></h2>
+          <p> <%= cafe.location %></p>
+        </div>
+        <h2 class="card-trip-pricing">Minimim credits applied: <%=@cafe_credits  %></h2>
       </div>
-      <h2 class="card-trip-pricing">£99.99</h2>
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
     </div>
-   <% end %>
-  </div>
+  <% end %>
 </div>
 
 

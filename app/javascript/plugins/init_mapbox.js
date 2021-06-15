@@ -15,19 +15,23 @@ const buildMap = (mapElement) => {
 
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
-    const popup=new mapboxgl.Popup().setHTML(marker.info_window);
+    // const popup=new mapboxgl.Popup().setHTML(marker.info_window);
+    // marker.getElement().addEventListener('click', event => {
+    // window.location.href = 'https://www.mapbox.com/';
+    // });
 
     // Create a HTML element for your custom marker
-    // const element= document.createElement('div');
-    // element.className= 'marker';
-    // element.style.backgroundImage= `url('${marker.image_url}')`;
-    // element.style.backgroundSize= 'contain';
-    // element.style.width= '25px';
-    // element.style.height= '25px';
+    const element= document.createElement('div');
+    element.className= 'marker';
+    element.style.backgroundImage= `url('${marker.image_url}')`;
+    element.style.backgroundSize= 'contain';
+    element.style.width= '25px';
+    element.style.height= '25px';
+    // element.href = `${link}`
 
-    new mapboxgl.Marker() //only pass the element variable if you styled your markers(const above)- otherwise keep blank
+    new mapboxgl.Marker(element) //only pass the element variable if you styled your markers(const above)- otherwise keep blank
       .setLngLat([ marker.lng, marker.lat ])
-      .setPopup(popup)
+      // .setPopup(popup)
       .addTo(map);
   });
 };

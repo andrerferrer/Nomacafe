@@ -10,9 +10,25 @@ class CafesController < ApplicationController
       lat: cafe.latitude,
       lng: cafe.longitude,
       # info_window: render_to_string(partial: "info_window", locals: { icon: icon }), #optional
-      # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS, ie the URL in cloudinary for instance') #optional
+      image_url: helpers.asset_url('https://res.cloudinary.com/sassia93/image/upload/v1623764989/4332298001595501336_qpx9s2.svg'),
+      link: "/cafes/#{cafe}"
       }
     end
+
+    # @cafes.each do |cafe|
+    #   tables = cafe.tables
+    #   credits_range = @tables.map do |t|
+    #   t.min_credits
+    #   end
+    #   min_credits = credits_range.min
+    #   max_credits = credits_range.max
+
+    #   if min_credits == max_credits
+    #     @cafe_credits = "#{min_credits}€/h/table"
+    #   else
+    #     @cafe_credits ="from #{min_credits}€ to #{max_credits}€ /h/table (dependent on table size)"
+    #   end
+    # end
   end
 
 
@@ -31,7 +47,7 @@ class CafesController < ApplicationController
     if min_credits == max_credits
       @cafe_credits = "#{min_credits}€/h/table"
     else
-      @cafe_credits ="#{min_credits} - #{max_credits}€/h/table (dependent on table size)"
+      @cafe_credits ="from #{min_credits}€ to #{max_credits}€ /h/table (dependent on table size)"
     end
   end
 
