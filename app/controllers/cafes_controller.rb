@@ -23,7 +23,7 @@ class CafesController < ApplicationController
   def show
 
     @tables = @cafe.tables
-
+    @booking = Booking.new
 
     authorize @cafe
     authorize @tables

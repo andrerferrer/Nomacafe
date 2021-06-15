@@ -1,0 +1,14 @@
+<div class= "container py-5">
+  <h1>Review</h1>
+      <p>
+        <%= simple_form_for([@booking, @review]) do |f|%>
+          <div class="form-inputs">
+            <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
+            <%= f.input :content %>
+          </div>
+          <div class="form-actions cols-m-6 align-self-center">
+            <%= f.submit "Post", class:"btn btn-primary btn-block" %>
+          </div>
+        <% end %>
+      </p>
+</div>
