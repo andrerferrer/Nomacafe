@@ -5,8 +5,6 @@ class CafesController < ApplicationController
 
   def index
     @cafes = policy_scope(Cafe)
-
-
     @markers = @cafes.geocoded.map do |cafe|
       {
       lat: cafe.latitude,
@@ -14,29 +12,38 @@ class CafesController < ApplicationController
       # info_window: render_to_string(partial: "info_window", locals: { icon: icon }), #optional
       # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS, ie the URL in cloudinary for instance') #optional
       }
-
-  end
-
+    end
   end
 
 
   def show
-
     @tables = @cafe.tables
-
-
     authorize @cafe
     authorize @tables
 
+    credits_range = @tables.map do |t|
+      t.min_credits
+    end
+
+    min_credits = credits_range.min
+    max_credits = credits_range.max
+
+    if min_credits == max_credits
+      @cafe_credits = "#{min_credits}€/h/table"
+    else
+      @cafe_credits ="#{min_credits} - #{max_credits}€/h/table (dependent on table size)"
+    end
   end
 
   def new
     @cafe = Cafe.new
+    authorize @cafe
   end
 
   def create
     @cafe = Cafe.new(cafe_params)
     @cafe.user = current_user
+    authorize @cafe
 
     if @cafe.save
       redirect_to @cafe, notice: "Your Cafe has been created!"

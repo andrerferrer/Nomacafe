@@ -5,7 +5,7 @@ class CafePolicy < ApplicationPolicy
     end
   end
 
-  def index
+  def index?
     true
   end
 
@@ -13,11 +13,15 @@ class CafePolicy < ApplicationPolicy
     true
   end
 
+  def new?
+    true
+  end
+
   def create?
     true
   end
 
-  def update
+  def update?
     true
     # user.admin || record.user == user
   end

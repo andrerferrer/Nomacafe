@@ -1,42 +1,4 @@
 // Import page-specific CSS files here.
 @import "home";
-
-.map-list-btn {
-  display: flex;
-  justify-content: center;
-  margin: auto;
-}
-
-.btn-map {
-  display: inline;
-  padding: 16px;
-  border-color: yellow;
-  border-style: solid;
-  cursor: pointer;
-}
-
-.btn-list {
-  display: inline;
-  padding: 16px;
-  border-color: yellow;
-  border-style: solid;
-  cursor: pointer;
-}
-
-.list-view {
-  display: none;
-}
-
-// .mapboxgl-ctrl-top-right {
-
-// }
-
-// .mapboxgl-ctrl-geocoder .mapboxgl-ctrl {
-//   display: flex;
-//   justify-content: center;
-// }
-
-// .mapboxgl-ctrl .mapboxgl-ctrl-group btn {
-//   position: absolute;
-//   left: 500px;
-// }
+@import "_cafe_index";
+@import "_cafe_show";
