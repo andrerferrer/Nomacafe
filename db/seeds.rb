@@ -7,14 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 # require 'faker'
 
+puts "Destroying all reviews"
+Review.destroy_all
 puts "Destroying all users"
 User.destroy_all
 puts "Destroying all cafes"
 Cafe.destroy_all
 puts "Smashing all tables"
 Table.destroy_all
-puts "Destroying all reviews"
-Review.destroy_all
 
 require "open-uri"
 
