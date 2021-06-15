@@ -26,8 +26,9 @@ require("channels")
 import "bootstrap";
 
 import { initMapbox } from '../plugins/init_mapbox';
-import {initAutocomplete} from '../plugins/init_autocomplete';
+import { initAutocomplete } from '../plugins/init_autocomplete';
 import { initMapListToggle } from '../components/init_toggle';
+import { initCloseNav, initOpenNav } from '../components/init_sidebar';
 
 
 // Internal imports, e.g:
@@ -36,10 +37,13 @@ import { initMapListToggle } from '../components/init_toggle';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-    initMapbox();
-    initAutocomplete();
-    if (document.querySelector(".map-list-btn")) {
-      console.log("hello");
-      initMapListToggle();
-    }
+  initMapbox();
+  initAutocomplete();
+  if (document.querySelector(".map-list-btn")) {
+    console.log("hello");
+    initMapListToggle();
+  }
 });
+
+initCloseNav();
+initOpenNav();
