@@ -1,45 +1,40 @@
 
-<div class= "container py-5">
-      <div class="row">
-        <div class ="col-12 col-md-6 offset-lg-2">
-          <div class = "bg-white rounded p-3 shadow">
-          <h2>
-            Book the Cafe
-          </h2>
-           <%= simple_form_for [@table, @booking] do |t|%>
-          <%= t.input :day, as: :string, required: false, input_html: {class: "datepicker"} %>
-          <%= t.input :start_time, as: :string, required: false, input_html: {class: "timepicker"} %>
-          <%= t.input :end_time, as: :string, required: false, input_html: {class: "timepicker"} %>
-          <div class="book-btn">
-            <%= t.submit class: "btn btn-flat"%>
-          </div>
-            <%end%>
-          </div>
-        </div>
+
+<!-- NEW CODE ABOVE WORKING CODE BELOW ABOVE CODE INPUTTED IN BOOKING SHOW-->
+
+<!--KEEP BELOW CODE FOR CAFE DAHSBOARD-->
+
+  <div class="card-trip">
+    <% if @cafe.photo.attached? %>
+      <img src="<%= cl_image_path @cafe.photo.key %>" />
+    <% else %>
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <% end %>
+
+    <div class="card-trip-infos">
+      <div>
+        <h2> <%= @cafe.name %></h2>
+        <p> <%= @cafe.location %></p>
       </div>
+      <h2 class="card-trip-pricing">Minimim credits applied: <%=@cafe_credits  %></h2>
     </div>
+  </div>
 
-<!-- NEW CODE ABOVE WORKING CODE BELOW -->
 
-<% if @cafe.photo.attached? %>
-    <%=cl_image_path(@cafe.photo.key) %>
-<% else %>
-<img src="https://phantom-marca.unidadeditorial.es/6325b621b1ec481729f0865211d0ed3f/resize/1320/f/jpg/assets/multimedia/imagenes/2020/11/25/16062940399517.jpg">
-<% end %>
-<%= @cafe.name %>
-<%= @cafe.location %>
+  <% @tables.each do |table| %>
+  <h5><%= table.name %></h5>
+      <p> <strong>Number of Spots: </strong> <%= table.spots %>
+          <strong>Type of Seats: </strong> <%= table.seat %>
+          <strong>Minimum Credits: </strong><%= table.min_credits %>
+          <%= link_to "Edit Table", edit_cafe_table_path([table.cafe, table])  %>
+          <%= link_to "Delete Table", [table.cafe, table], method: :delete %>
+       </p>
 
-<% @tables.each do |table| %>
-<li>
-  <%= table.name %>
-  <%= table.spots %>
-  <%= table.seat %>
-  <%= table.min_credits %>
-  <%= link_to "Edit Table", edit_cafe_table_path([table.cafe, table])  %>
-  <%= link_to "Delete Table", [table.cafe, table], method: :delete %>
-</li>
-<% end %>
+  <% end %>
 
-<%= link_to "Add a new table", new_cafe_table_path(@cafe) %>
+
+<p><%= link_to "Add a new table", new_cafe_table_path(@cafe) %></p>
+<p><%= link_to "Back to all cafes", cafes_path  %></p>
+
 
 

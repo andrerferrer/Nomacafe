@@ -2,7 +2,7 @@
 
 <%= simple_form_for(@cafe) do |f| %>
   <div class="form-inputs">
-    <% f.input :name %>
+    <%= f.input :name %>
     <%= f.input :location %>
     <%= f.input :photo, input_html: { class: 'd-none' }, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
     </div>
