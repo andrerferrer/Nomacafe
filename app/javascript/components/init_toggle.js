@@ -5,12 +5,12 @@ const listView = document.querySelector("#list-view");
 
 const initMapListToggle = () => {
   btnList.onclick = () => {
-    mapView.style.display = "none";
-    listView.classList.remove("ninja")
+    mapView.classList.add("ninja");
+    listView.classList.remove("ninja");
   };
 
   btnMap.onclick = () => {
-    mapView.style.display = "";
+    mapView.classList.remove("ninja");
     listView.classList.add("ninja");
   };
 };
