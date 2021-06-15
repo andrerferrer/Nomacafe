@@ -14,14 +14,17 @@ class TablePolicy < ApplicationPolicy
   end
 
   def create?
-    user.admin || record.user == user
+    true
+    # user.admin || record.user == user
   end
 
   def update
-    user.admin || record.user == user
+    true
+    # user.admin || record.user == user
   end
 
   def destroy?
-    user.admin || record.user == user
+    true
+    # user.admin || record.user == user
   end
 end

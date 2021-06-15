@@ -18,7 +18,8 @@ class CafePolicy < ApplicationPolicy
   end
 
   def update
-    user.admin || record.user == user
+    true
+    # user.admin || record.user == user
   end
 
   def destroy?
