@@ -24,15 +24,16 @@ class TablesController < ApplicationController
   end
 
   def edit
-    # authorize @table
-    # authorize @cafe
+
     @cafe = Cafe.find(params[:cafe_id])
     @table = Table.find(params[:id])
+    authorize @table
   end
 
   def update
     @cafe = Cafe.find(params[:cafe_id])
     @table = Table.find(params[:id])
+    authorize @table
 
     if @table.save
       redirect_to cafe_path(@cafe), notice: "Table was successfully updated"

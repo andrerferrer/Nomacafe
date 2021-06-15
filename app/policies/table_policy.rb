@@ -18,7 +18,11 @@ class TablePolicy < ApplicationPolicy
     # user.admin || record.user == user
   end
 
-  def update
+  def edit?
+    true
+  end
+
+  def update?
     true
     # user.admin || record.user == user
   end
