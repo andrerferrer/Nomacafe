@@ -29,9 +29,13 @@ import { initMapbox } from '../plugins/init_mapbox';
 import {initAutocomplete} from '../plugins/init_autocomplete';
 import { initMapListToggle } from '../components/init_toggle';
 
+import { initStarRating } from '../plugins/init_star_rating';
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+
+initStarRating();
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
