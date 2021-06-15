@@ -5,13 +5,13 @@ const listView = document.querySelector("#list-view");
 
 const initMapListToggle = () => {
   btnList.onclick = () => {
-    mapView.style.display = "none";
-    listView.style.display = "block";
+    mapView.classList.add("ninja");
+    listView.classList.remove("ninja");
   };
 
   btnMap.onclick = () => {
-    mapView.style.display = "block";
-    listView.style.display = "none";
+    mapView.classList.remove("ninja");
+    listView.classList.add("ninja");
   };
 };
 
