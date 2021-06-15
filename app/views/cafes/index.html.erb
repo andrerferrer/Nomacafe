@@ -1,1 +1,26 @@
+<div class="map-list-btn"><div class="btn-map"> Map</div> <div class ="btn-list"> List </div></div>
+
+
+<h1> All cafes </h1>
+
+
+
+<div class="list-view">
+  <div id="list">
+    <% @cafes.each do |cafe| %>
+    <%= link_to "#{cafe.name}", cafe_path(cafe) %>
+    <%= cafe.location %>
+    <% end %>
+  </div>
+</div>
+
+
+<div class="map-view">
+  <div id="map"
+       style="width: 100%; height: 600px;"
+       data-markers="<%= @markers.to_json%>"
+       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>">
+  </div>
+</div>
+
 
