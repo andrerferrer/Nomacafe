@@ -2,11 +2,11 @@
   "name": "Nomacafe",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3",
     "@fullcalendar/core": "^5.8.0",
     "@fullcalendar/daygrid": "^5.8.0",
     "@fullcalendar/list": "^5.8.0",
     "@fullcalendar/timegrid": "^5.8.0",
-    "@fortawesome/fontawesome-free": "^5.15.3",
     "@mapbox/mapbox-gl-geocoder": "^4.7.1",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",

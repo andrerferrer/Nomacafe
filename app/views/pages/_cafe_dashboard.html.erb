@@ -14,81 +14,84 @@
       </div>
     </div>
 
+<div data-controller="tabsdash">
 
-    <div class=cafe-tabs>
-      <ul class="list-inline tabs-underlined">
-        <li>
-          <div id="cafe-bookings-tab" class="tab-underlined cafe-bookings-tab active">Bookings</div>
-        </li>
-        <li>
-          <div id="cafe-tables-tab" class="tab-underlined cafe-tables-tab">Tables</div>
-        </li>
-        <li>
-          <div id="cafe-reviews-tab" class="tab-underlined cafe-reviews-tab">Reviews</div>
-        </li>
-        <li>
-          <div id="cafe-transactions-tab" href="#" class="tab-underlined cafe-transactions-tab">Transactions</div>
-        </li>
-      </ul>
-   </div>
+  <div class=cafe-tabs>
+    <ul class="list-inline tabs-underlined">
+      <li>
+        <div data-action="click->tabsdash#bookingstab" class="tab-underlined" data-tabsdash-target="tabbook">Bookings</div>
+      </li>
+      <li>
+        <div data-action="click->tabsdash#tablestab" class="tab-underlined" data-tabsdash-target="tabtables">Tables</div>
+      </li>
+      <li>
+        <div data-action="click->tabsdash#reviewstab" class="tab-underlined" data-tabsdash-target="tabreviews">Reviews</div>
+      </li>
+      <li>
+        <div data-action="click->tabsdash#transactionstab" class="tab-underlined" data-tabsdash-target="tabtransactions">Transactions</div>
+      </li>
+    </ul>
+ </div>
 
 
 
 <!-- CAFE_BOOKINGS TAB -->
 
-  <div id="cafe-bookings" class = "calendar-js" data-controller="calendar">
-    <div id = "calendar" data-calendar-target="element" data-bookings="<%= @bookings.to_json%>">
+<div data-tabsdash-target="cafebookings" class = "calendar-js" data-controller="calendar">
+  <div id = "calendar" data-calendar-target="element" data-bookings="<%= @bookings.to_json%>">
 
-    </div>
   </div>
+</div>
 
 
 
 <!-- CAFE_TABLES TAB -->
 
 
-<div id="cafe-tables">
-    <% @tables.each do |table| %>
-    <h5><%= table.name %></h5>
-        <p> <strong>Number of Spots: </strong> <%= table.spots %>
-            <strong>Type of Seats: </strong> <%= table.seat %>
-            <strong>Minimum Credits: </strong><%= table.min_credits %>
+<div data-tabsdash-target="cafetables">
+  <% @tables.each do |table| %>
+  <h5><%= table.name %></h5>
+      <p> <strong>Number of Spots: </strong> <%= table.spots %>
+          <strong>Type of Seats: </strong> <%= table.seat %>
+          <strong>Minimum Credits: </strong><%= table.min_credits %>
 
-         </p>
+       </p>
 
-        <p><%= link_to "Edit Table", edit_cafe_table_path(table.cafe_id, table) %></p>
-        <p> <%= link_to "Delete Table", [table.cafe, table], method: :delete %></p>
+      <p><%= link_to "Edit Table", edit_cafe_table_path(table.cafe_id, table), remote:true %></p>
+      <p> <%= link_to "Delete Table", [table.cafe, table], method: :delete, remote:true %></p>
 
-    <% end %>
-
-  <p><%= link_to "Add a new table", new_cafe_table_path(@user_cafe) %></p>
-</div>
-
-
-
-
-<div id="cafe-reviews">
-
-  <% @reviews.each do |rev| %>
-   <ul>
-    <li>
-      <% rev.rating.times do %>
-      <i class="fas fa-star"></i>
-      <% end %>
-    </li>
-    <div>
-        <li>
-          <%= rev.content %>
-        </li>
-    </div>
-  </ul>
   <% end %>
 
+<p><%= link_to "Add a new table", new_cafe_table_path(@user_cafe), remote:true %></p>
 </div>
 
 
-<div id="cafe-transactions">
-  <h2>Current Balance: <%= @user_cafe.owed_money%>€ (paid at month end)</h2>
-  <p>(paid at month end)</p>
+
+
+  <div data-tabsdash-target="cafereviews">
+
+    <% @reviews.each do |rev| %>
+      <ul>
+        <li>
+          <% rev.rating.times do %>
+          <i class="fas fa-star"></i>
+          <% end %>
+        </li>
+      <div>
+          <li>
+            <%= rev.content %>
+          </li>
+      </div>
+      </ul>
+  <% end %>
+
+  </div>
+
+
+<div data-tabsdash-target="cafetransactions">
+<h2>Current Balance: <%= @user_cafe.owed_money%>€ (paid at month end)</h2>
+<p>(paid at month end)</p>
+
+</div>
 
 </div>

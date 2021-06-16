@@ -21,60 +21,64 @@
   </div>
 
 
-  <div class="1223cafe-tabs">
-      <ul class="list-inline tabs-underlined">
-        <li>
-          <div class="tab-underlined active showpage-book-spot-tab">Book your spot!</div>
-        </li>
-        <li>
-          <div id="showpage-menu-tab" class="tab-underlined">Menu</div>
-        </li>
-        <li>
-          <div class="tab-underlined showpage-reviews-tab"> Nomad Reviews</div>
-        </li>
-      </ul>
-   </div>
+  <div data-controller="tabsshow">
 
-
-<div class="showpage-nomad-book-tables">
-
-  <% @tables.each do |table| %>
-    <h5><%= table.name %></h5>
-      <p> <strong>Number of Spots: </strong> <%= table.spots %>
-          <strong>Type of Seats: </strong> <%= table.seat %>
-          <strong>Minimum Credits: </strong><%= table.min_credits %>
-       </p>
-
-  <% end %>
-
-<p><%= link_to "Back to all cafes", cafes_path  %></p>
-
-</div>
-
-
-<div class="showpage-nomad-reviews" class="ninja">
-  <div class= "container py-5">
-
-    <% @cafe.reviews.each do |review| %>
-    <ul>
-      <li>
-        <% review.rating.times do %>
-        <i class="fas fa-star"></i>
-        <% end %>
-      </li>
-      <div>
+    <div class="cafe-tabs">
+        <ul class="list-inline tabs-underlined">
           <li>
-            <%= review.content %>
+            <div class="tab-underlined" data-action="click->tabsshow#bookings" data-tabsshow-target="booktab">Book your spot</div>
           </li>
-      </div>
-    </ul>
-      <div class="link">
-        <% if review.booking.user == current_user %>
-          <%= link_to 'Delete', review_path(review), method: :delete  %>
-        <% end %>
-      </div>
-    <% end -%>
-  </div>
-</div>
+          <li>
+            <div class="tab-underlined" data-action="click->tabsshow#menu" data-tabsshow-target="menutab">Menu</div>
+          </li>
+          <li>
+            <div class="tab-underlined" data-action="click->tabsshow#reviews"data-tabsshow-target="reviewtab"> Nomad Reviews</div>
+          </li>
+        </ul>
+     </div>
 
+  <div class="show-bookspot" data-tabsshow-target="bookspot">
+    <% @tables.each do |table| %>
+      <h5><%= table.name %></h5>
+        <p> <strong>Number of Spots: </strong> <%= table.spots %>
+            <strong>Type of Seats: </strong> <%= table.seat %>
+            <strong>Minimum Credits: </strong><%= table.min_credits %>
+         </p>
+    <% end %>
+    <p><%= link_to "Back to all cafes", cafes_path, remote:true  %></p>
+  </div>
+
+
+  <div data-tabsshow-target="showmenu">
+    <h1>Input Menu Here</h1>
+  </div>
+
+
+
+  <div data-tabsshow-target="seereviews">
+    <div class= "container py-5">
+
+      <% @cafe.reviews.each do |review| %>
+      <ul>
+        <li>
+          <% review.rating.times do %>
+          <i class="fas fa-star"></i>
+          <% end %>
+        </li>
+        <div>
+            <li>
+              <%= review.content %>
+            </li>
+        </div>
+      </ul>
+        <div class="link">
+          <% if review.booking.user == current_user %>
+            <%= link_to 'Delete', review_path(review), method: :delete, remote:true  %>
+          <% end %>
+        </div>
+      <% end -%>
+    </div>
+  </div>
+
+</div>
 

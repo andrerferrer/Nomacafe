@@ -1,0 +1,30 @@
+.map-list-btn {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.btn-map {
+  display: inline;
+  padding: 8px;
+  border-color: $nomacafe;
+  border-style: solid;
+  border-radius: 16px;
+  cursor: pointer;
+  color: $nomacafe;
+}
+
+.btn-list {
+  display: inline;
+  padding: 8px;
+  border-color: $nomacafe;
+  border-radius: 16px;
+  border-style: solid;
+  cursor: pointer;
+  color: $nomacafe;
+}
+
+.btn-active {
+  background-color: $nomacafe;
+  color: white;
+}
