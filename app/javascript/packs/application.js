@@ -28,7 +28,7 @@ import "controllers";
 
 import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from '../plugins/init_autocomplete';
-import { initMapListToggle } from '../components/init_toggle';
+import { initMapListToggle, initCafeDashToggle } from '../components/init_toggle';
 import { initCloseNav, initOpenNav } from '../components/init_sidebar';
 
 import { initStarRating } from '../plugins/init_star_rating';
@@ -47,6 +47,10 @@ document.addEventListener('turbolinks:load', () => {
   if (document.querySelector(".map-list-btn")) {
     console.log("hello");
     initMapListToggle();
+  };
+
+  if (document.querySelector("#cafe-bookings-tab")) {
+    initCafeDashToggle();
   }
 });
 
