@@ -18,10 +18,10 @@ Table.destroy_all
 
 require "open-uri"
 
-vlad = User.create(email: "adrewkin@outlook.com", password: "password", password_confirmation: "password")
-carlos = User.create(email: "lacuevafortitcarlos@gmail.com", password: "password", password_confirmation: "password")
-alexia = User.create(email: "sassia93@hotmail.com", password: "password", password_confirmation: "password")
-millad = User.create(email: "shadpourmillad@gmail.com", password: "password", password_confirmation: "password")
+vlad = User.create!(email: "adrewkin@outlook.com", password: "password", password_confirmation: "password")
+carlos = User.create!(email: "lacuevafortitcarlos@gmail.com", password: "password", password_confirmation: "password")
+alexia = User.create!(email: "sassia93@hotmail.com", password: "password", password_confirmation: "password")
+millad = User.create!(email: "shadpourmillad@gmail.com", password: "password", password_confirmation: "password")
 
 barrios = [
   "Barrio Barceloneta", "Vecindario Sants de Barcelona", "Áreas Bogatell", 
@@ -129,6 +129,7 @@ cafes.each do |cafe|
     owed_money:[:owed_money],
     user: new_user
   )
+
   file = URI.open(cafe[:image_url])
   # new_one.photo.attach(file)
   new_cafe.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
