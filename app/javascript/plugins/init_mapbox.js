@@ -13,9 +13,21 @@ const buildMap = (mapElement) => {
   });
 };
 
+const makeMarkerClickable = (markers) => {
+  const markerElement = marker.getElement(); // this gets the marker element. console.log it to see!
+  // add a nice link to go to
+  const linkToGo = "google.com";
+  // wrap the marker element in a <a> tag
+  markerElement.innerHTML = `
+    <a class='add-some-style' href='${linkToGo}'>
+        ${markerElement.innerHTML}
+    </a>`;
+}
+
+
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
-    // const popup=new mapboxgl.Popup().setHTML(marker.info_window);
+    const popup=new mapboxgl.Popup().setHTML(marker.info_window);
     // marker.getElement().addEventListener('click', event => {
     // window.location.href = 'https://www.mapbox.com/';
     // });
@@ -31,9 +43,11 @@ const addMarkersToMap = (map, markers) => {
 
     new mapboxgl.Marker(element) //only pass the element variable if you styled your markers(const above)- otherwise keep blank
       .setLngLat([ marker.lng, marker.lat ])
-      // .setPopup(popup)
+      .setPopup(popup)
       .addTo(map);
+      // makeMarkerClickable(marker);
   });
+
 };
 
 const fitMapToMarkers = (map, markers) => {
@@ -45,6 +59,7 @@ const fitMapToMarkers = (map, markers) => {
     duration: 2800
   });
 };
+
 
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
