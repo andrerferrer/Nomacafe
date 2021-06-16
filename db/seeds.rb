@@ -35,8 +35,8 @@ barrios = [
 debt = (0..100).to_a
 min_debt = (1..10).to_a
 seating = (2..6).to_a
-start_times = ["08:00", "10:00", "12:00"]
-end_times = ["14:00", "16:00", "18:00"]
+start_times = ["8", "10", "12"]
+end_times = ["14", "16", "18"]
 descriptions = [
   "Table by the window", 
   "Table by the corner", 
@@ -157,8 +157,8 @@ Table.all.each do |table|
     # Same as line 128
     user: User.all.sample,
     table: table,
-    start_time: start_times.sample,
-    end_time: end_times.sample,
+    start_time: DateTime.now.change({hour: start_times.sample}),
+    end_time: DateTime.now.change({hour: end_times.sample}),
     status: (0..1).to_a.sample
   )
   review = reviews.sample

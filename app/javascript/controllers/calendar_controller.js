@@ -20,6 +20,7 @@ export default class extends Controller {
 
   connect() {
     this.initCalendar();
+    console.log("yoyoyoyo")
   }
 
   initCalendar() {
