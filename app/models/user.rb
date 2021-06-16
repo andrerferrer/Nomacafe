@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :bookings, dependent: :destroy
   has_one :cafe, dependent: :destroy
+
 end
