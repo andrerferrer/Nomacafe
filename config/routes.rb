@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :dashboard, only: [:show]
   resources :cafes do
     resources :tables, only: [:new, :create, :edit, :update, :destroy]
   end
@@ -16,7 +17,6 @@ Rails.application.routes.draw do
   end
 
   resources :reviews, only: [:destroy]
-  resources :dashboard, only: [:show]
 
 end
 
