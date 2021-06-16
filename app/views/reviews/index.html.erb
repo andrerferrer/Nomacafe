@@ -1,0 +1,21 @@
+
+<div class= "container py-5">
+  <h1>Here are all of your reviews</h1>
+  <% @reviews.each do |review| %>
+  <ul>
+    <li>
+      <% review.rating.times do %>
+      <i class="fas fa-star"></i>
+      <% end %>  
+    </li>
+    <div>
+        <li>
+          <%= review.content %>
+        </li>
+    </div>
+  </ul>
+    <div class="link">
+      <%= link_to 'Delete', review_path(review), method: :delete  %>
+    </div>
+  <% end -%>
+</div>

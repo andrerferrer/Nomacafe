@@ -9,9 +9,12 @@ class User < ApplicationRecord
   has_one_attached :photo
 
 
+
   def is_cafe_owner?
     cafe.present?
 
   end
+
+
 
 end
