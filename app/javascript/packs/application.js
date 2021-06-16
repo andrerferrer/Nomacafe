@@ -24,6 +24,7 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import "controllers";
 
 import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from '../plugins/init_autocomplete';
@@ -47,3 +48,4 @@ document.addEventListener('turbolinks:load', () => {
 
 initCloseNav();
 initOpenNav();
+

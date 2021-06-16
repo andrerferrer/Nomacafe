@@ -5,5 +5,9 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @bookings = current_user.bookings.map{|booking| {title: booking.user.email, start: booking.start_time.strftime("%Y-%m-%d"), end: booking.end_time.strftime("%Y-%m-%d")}}
+    start_date = params.fetch(:start_date, Date.today).to_date
+    @date_range = (start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
   end
+
 end
