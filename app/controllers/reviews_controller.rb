@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+
   def new
     @booking = Booking.find(params[:booking_id])
     @review = Review.new
@@ -22,7 +23,7 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     authorize @review
     @review.destroy
-    redirect_to table_path(@review.booking.table)
+    redirect_to cafe_path(@review.booking.table.cafe)
   end
 
   private

@@ -22,7 +22,7 @@
 
 
   <% @tables.each do |table| %>
-  <h5><%= table.name %></h5>
+    <h5><%= table.name %></h5>
       <p> <strong>Number of Spots: </strong> <%= table.spots %>
           <strong>Type of Seats: </strong> <%= table.seat %>
           <strong>Minimum Credits: </strong><%= table.min_credits %>
@@ -36,5 +36,27 @@
 <p><%= link_to "Add a new table", new_cafe_table_path(@cafe) %></p>
 <p><%= link_to "Back to all cafes", cafes_path  %></p>
 
+<div class= "container py-5">
+  <h1>Reviews</h1>
 
+  <% @cafe.reviews.each do |review| %>
+  <ul>
+    <li>
+      <% review.rating.times do %>
+      <i class="fas fa-star"></i>
+      <% end %>  
+    </li>
+    <div>
+        <li>
+          <%= review.content %>
+        </li>
+    </div>
+  </ul>
+    <div class="link">
+      <% if review.booking.user == current_user %>
+        <%= link_to 'Delete', review_path(review), method: :delete  %>
+      <% end %>
+    </div>
+  <% end -%>
+</div>
 
