@@ -1,0 +1,94 @@
+<div class="card-trip">
+      <% if @user_cafe.photo.attached? %>
+        <img src="<%= cl_image_path @user_cafe.photo.key %>" />
+      <% else %>
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <% end %>
+
+      <div class="card-trip-infos">
+        <div>
+          <h2> <%= @user_cafe.name %></h2>
+          <p> <%= @user_cafe.location %></p>
+        </div>
+        <h2 class="card-trip-pricing">Minimim credits applied: <%=@user_cafe_credits  %></h2>
+      </div>
+    </div>
+
+
+    <div class=cafe-tabs>
+      <ul class="list-inline tabs-underlined">
+        <li>
+          <div id="cafe-bookings-tab" class="tab-underlined cafe-bookings-tab active">Bookings</div>
+        </li>
+        <li>
+          <div id="cafe-tables-tab" class="tab-underlined cafe-tables-tab">Tables</div>
+        </li>
+        <li>
+          <div id="cafe-reviews-tab" class="tab-underlined cafe-reviews-tab">Reviews</div>
+        </li>
+        <li>
+          <div id="cafe-transactions-tab" href="#" class="tab-underlined cafe-transactions-tab">Transactions</div>
+        </li>
+      </ul>
+   </div>
+
+
+
+<!-- CAFE_BOOKINGS TAB -->
+
+  <div id="cafe-bookings" class = "calendar-js" data-controller="calendar">
+    <div id = "calendar" data-calendar-target="element" data-bookings="<%= @bookings.to_json%>">
+
+    </div>
+  </div>
+
+
+
+<!-- CAFE_TABLES TAB -->
+
+
+<div id="cafe-tables">
+    <% @tables.each do |table| %>
+    <h5><%= table.name %></h5>
+        <p> <strong>Number of Spots: </strong> <%= table.spots %>
+            <strong>Type of Seats: </strong> <%= table.seat %>
+            <strong>Minimum Credits: </strong><%= table.min_credits %>
+
+         </p>
+
+        <p><%= link_to "Edit Table", edit_cafe_table_path(table.cafe_id, table) %></p>
+        <p> <%= link_to "Delete Table", [table.cafe, table], method: :delete %></p>
+
+    <% end %>
+
+  <p><%= link_to "Add a new table", new_cafe_table_path(@user_cafe) %></p>
+</div>
+
+
+
+
+<div id="cafe-reviews">
+
+  <% @reviews.each do |rev| %>
+   <ul>
+    <li>
+      <% rev.rating.times do %>
+      <i class="fas fa-star"></i>
+      <% end %>
+    </li>
+    <div>
+        <li>
+          <%= rev.content %>
+        </li>
+    </div>
+  </ul>
+  <% end %>
+
+</div>
+
+
+<div id="cafe-transactions">
+  <h2>Current Balance: <%= @user_cafe.owed_money%>€ (paid at month end)</h2>
+  <p>(paid at month end)</p>
+
+</div>

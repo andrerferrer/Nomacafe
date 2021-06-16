@@ -29,58 +29,88 @@ const transactions = document.querySelector("#cafe-transactions");
 
 
 const initCafeDashToggle = () => {
-  tabBookings.onclick = () => {
-    tabBookings.classList.add("active");
-    tabTables.classList.remove("active");
-    tabReviews.classList.remove("active");
-    tabTransactions.classList.remove("active");
-
-    bookings.classList.remove("ninja");
-    tables.classList.add("ninja");
-    reviews.classList.add("ninja");
-    transactions.classList.add("ninja");
-  };
-
-  tabTables.onclick = () => {
-    tabBookings.classList.remove("active");
-    tabTables.classList.add("active");
-    tabReviews.classList.remove("active");
-    tabTransactions.classList.remove("active");
-
-    bookings.classList.add("ninja");
-    tables.classList.remove("ninja");
-    reviews.classList.add("ninja");
-    transactions.classList.add("ninja");
-  };
-
-  tabReviews.onclick = () => {
-    tabBookings.classList.remove("active");
-    tabTables.classList.remove("active");
-    tabReviews.classList.add("active");
-    tabTransactions.classList.remove("active");
-
-    bookings.classList.add("ninja");
-    tables.classList.add("ninja");
-    reviews.classList.remove("ninja");
-    transactions.classList.add("ninja");
-  };
-
-    tabTransactions.onclick = () => {
-      tabBookings.classList.remove("active");
+  if (tabBookings && tabTables && tabReviews && tabTransactions) {
+    tabBookings.onclick = () => {
+      tabBookings.classList.add("active");
       tabTables.classList.remove("active");
       tabReviews.classList.remove("active");
-      tabTransactions.classList.add("active");
+      tabTransactions.classList.remove("active");
+
+      bookings.classList.remove("ninja");
+      tables.classList.add("ninja");
+      reviews.classList.add("ninja");
+      transactions.classList.add("ninja");
+    };
+
+    tabTables.onclick = () => {
+      tabBookings.classList.remove("active");
+      tabTables.classList.add("active");
+      tabReviews.classList.remove("active");
+      tabTransactions.classList.remove("active");
+
+      bookings.classList.add("ninja");
+      tables.classList.remove("ninja");
+      reviews.classList.add("ninja");
+      transactions.classList.add("ninja");
+    };
+
+    tabReviews.onclick = () => {
+      tabBookings.classList.remove("active");
+      tabTables.classList.remove("active");
+      tabReviews.classList.add("active");
+      tabTransactions.classList.remove("active");
 
       bookings.classList.add("ninja");
       tables.classList.add("ninja");
-      reviews.classList.add("ninja");
-      transactions.classList.remove("ninja");
-  };
+      reviews.classList.remove("ninja");
+      transactions.classList.add("ninja");
+    };
 
+      tabTransactions.onclick = () => {
+        tabBookings.classList.remove("active");
+        tabTables.classList.remove("active");
+        tabReviews.classList.remove("active");
+        tabTransactions.classList.add("active");
+
+        bookings.classList.add("ninja");
+        tables.classList.add("ninja");
+        reviews.classList.add("ninja");
+        transactions.classList.remove("ninja");
+    };
+  }
 };
+
+
+const tablesCafe = document.querySelector(".showpage-nomad-book-tables");
+const nomadReviews = document.querySelector(".showpage-nomad-reviews");
+
+const bookSpot = document.querySelector(".showpage-book-spot-tab");
+const nomadReviewsTab = document.querySelector(".showpage-reviews-tab")
+
+const initCafeShowToggle = () => {
+  if (bookSpot && nomadReviewsTab) {
+    bookSpot.onclick = () => {
+      bookSpot.classList.add("active");
+      nomadReviewsTab.remove("active");
+
+      tablesCafe.classList.remove("ninja");
+      nomadReviews.classList.add("ninja")
+    };
+
+    nomadReviewsTab.onclick = () => {
+      bookSpot.classList.remove("active");
+      nomadReviewsTab.add("active");
+
+      tablesCafe.classList.add("ninja");
+      nomadReviews.classList.remove("ninja");
+    }
+  }
+};
+
 
 
 
 export { initMapListToggle };
 export { initCafeDashToggle};
+export { initCafeShowToggle};
 
