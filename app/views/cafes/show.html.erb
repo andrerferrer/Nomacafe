@@ -21,42 +21,60 @@
   </div>
 
 
+  <div class="1223cafe-tabs">
+      <ul class="list-inline tabs-underlined">
+        <li>
+          <div class="tab-underlined active showpage-book-spot-tab">Book your spot!</div>
+        </li>
+        <li>
+          <div id="showpage-menu-tab" class="tab-underlined">Menu</div>
+        </li>
+        <li>
+          <div class="tab-underlined showpage-reviews-tab"> Nomad Reviews</div>
+        </li>
+      </ul>
+   </div>
+
+
+<div class="showpage-nomad-book-tables">
+
   <% @tables.each do |table| %>
     <h5><%= table.name %></h5>
       <p> <strong>Number of Spots: </strong> <%= table.spots %>
           <strong>Type of Seats: </strong> <%= table.seat %>
           <strong>Minimum Credits: </strong><%= table.min_credits %>
-          <%= link_to "Edit Table", edit_cafe_table_path([table.cafe, table])  %>
-          <%= link_to "Delete Table", [table.cafe, table], method: :delete %>
        </p>
 
   <% end %>
 
-
-<p><%= link_to "Add a new table", new_cafe_table_path(@cafe) %></p>
 <p><%= link_to "Back to all cafes", cafes_path  %></p>
 
-<div class= "container py-5">
-  <h1>Reviews</h1>
-
-  <% @cafe.reviews.each do |review| %>
-  <ul>
-    <li>
-      <% review.rating.times do %>
-      <i class="fas fa-star"></i>
-      <% end %>  
-    </li>
-    <div>
-        <li>
-          <%= review.content %>
-        </li>
-    </div>
-  </ul>
-    <div class="link">
-      <% if review.booking.user == current_user %>
-        <%= link_to 'Delete', review_path(review), method: :delete  %>
-      <% end %>
-    </div>
-  <% end -%>
 </div>
+
+
+<div class="showpage-nomad-reviews" class="ninja">
+  <div class= "container py-5">
+
+    <% @cafe.reviews.each do |review| %>
+    <ul>
+      <li>
+        <% review.rating.times do %>
+        <i class="fas fa-star"></i>
+        <% end %>
+      </li>
+      <div>
+          <li>
+            <%= review.content %>
+          </li>
+      </div>
+    </ul>
+      <div class="link">
+        <% if review.booking.user == current_user %>
+          <%= link_to 'Delete', review_path(review), method: :delete  %>
+        <% end %>
+      </div>
+    <% end -%>
+  </div>
+</div>
+
 

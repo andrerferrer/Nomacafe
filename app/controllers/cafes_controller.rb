@@ -62,7 +62,7 @@ class CafesController < ApplicationController
     authorize @cafe
 
     if @cafe.save
-      redirect_to @cafe, notice: "Your Cafe has been created!"
+      redirect_to dashboard, notice: "Your Cafe has been created!"
     else
       render :new
     end
@@ -74,7 +74,7 @@ class CafesController < ApplicationController
 
   def update
     if @cafe.update(cafe_params)
-      redirect_to @cafe, notice: "Your Cafe has been updated"
+      redirect_to dashboard, notice: "Your Cafe has been updated"
     else
     render :edit
     end

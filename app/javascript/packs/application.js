@@ -28,7 +28,7 @@ import "controllers";
 
 import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from '../plugins/init_autocomplete';
-import { initMapListToggle, initCafeDashToggle } from '../components/init_toggle';
+import { initMapListToggle, initCafeDashToggle, initCafeShowToggle } from '../components/init_toggle';
 import { initCloseNav, initOpenNav } from '../components/init_sidebar';
 
 import { initStarRating } from '../plugins/init_star_rating';
@@ -51,7 +51,11 @@ document.addEventListener('turbolinks:load', () => {
 
   if (document.querySelector("#cafe-bookings-tab")) {
     initCafeDashToggle();
-  }
+  };
+
+  if (document.querySelector(".showpage-nomad-book-tables")) {
+    initCafeShowToggle();
+  };
 });
 
 initCloseNav();
