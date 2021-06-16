@@ -11,3 +11,57 @@
 </div>
 
 
+<!-- IF USER HAS ONE CAFE -->
+<% if @user_cafe.present? %>
+   <div class="card-trip">
+      <% if @user_cafe.photo.attached? %>
+        <img src="<%= cl_image_path @user_cafe.photo.key %>" />
+      <% else %>
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <% end %>
+
+      <div class="card-trip-infos">
+        <div>
+          <h2> <%= @user_cafe.name %></h2>
+          <p> <%= @user_cafe.location %></p>
+        </div>
+        <h2 class="card-trip-pricing">Minimim credits applied: <%=@user_cafe_credits  %></h2>
+      </div>
+    </div>
+
+
+    <div class=cafe-tabs>
+    <ul class="list-inline tabs-underlined">
+    <li>
+      <a href="#" class="tab-underlined active">Bookings</a>
+    </li>
+    <li>
+      <a href="#" class="tab-underlined">Tables</a>
+    </li>
+    <li>
+      <a href="#" class="tab-underlined">Reviews</a>
+    </li>
+  </ul>
+  </div>
+
+
+    <% @tables.each do |table| %>
+    <h5><%= table.name %></h5>
+        <p> <strong>Number of Spots: </strong> <%= table.spots %>
+            <strong>Type of Seats: </strong> <%= table.seat %>
+            <strong>Minimum Credits: </strong><%= table.min_credits %>
+            <%= link_to "Edit Table", edit_cafe_table_path([table.cafe, table])  %>
+            <%= link_to "Delete Table", [table.cafe, table], method: :delete %>
+         </p>
+
+    <% end %>
+
+
+  <p><%= link_to "Add a new table", new_cafe_table_path(@user_cafe) %></p>
+
+
+
+<% else %>
+
+
+<% end %>
