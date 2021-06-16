@@ -10,19 +10,37 @@
 
 puts "Destroying all reviews"
 Review.destroy_all
-puts "Destroying all users"
-User.destroy_all
-puts "Destroying all cafes"
-Cafe.destroy_all
 puts "Smashing all tables"
 Table.destroy_all
+puts "Destroying all cafes"
+Cafe.destroy_all
+puts "Destroying all users"
+User.destroy_all
 
 require "open-uri"
 
-vlad = User.create(email: "adrewkin@outlook.com", password: "password", password_confirmation: "password")
-carlos = User.create(email: "lacuevafortitcarlos@gmail.com", password: "password", password_confirmation: "password")
-alexia = User.create(email: "sassia93@hotmail.com", password: "password", password_confirmation: "password")
-millad = User.create(email: "shadpourmillad@gmail.com", password: "password", password_confirmation: "password")
+user_cafe1 = User.create!(email: "adrewkin@outlook.com", password: "password", password_confirmation: "password")
+user_cafe2= User.create!(email: "lacuevafortitcarlos@gmail.com", password: "password", password_confirmation: "password")
+user_cafe3 = User.create!(email: "sassia93@hotmail.com", password: "password", password_confirmation: "password")
+user_cafe4 = User.create!(email: "shadpourmillad@gmail.com", password: "password", password_confirmation: "password")
+user_cafe5 = User.create!(email: "asgs@outlook.com", password: "password", password_confirmation: "password")
+user_cafe6 = User.create!(email: "lacuevag@gmail.com", password: "password", password_confirmation: "password")
+user_cafe7 = User.create!(email: "sasssgf@hotmail.com", password: "password", password_confirmation: "password")
+user_cafe8 = User.create!(email: "shaddsg@gmail.com", password: "password", password_confirmation: "password")
+user_cafe9 = User.create!(email: "afdb@outlook.com", password: "password", password_confirmation: "password")
+user_cafe10 = User.create!(email: "lasdgarlos@gmail.com", password: "password", password_confirmation: "password")
+
+
+
+nomad_user1 = User.create!(email: "sadsgf@hotmail.com", password: "password", password_confirmation: "password")
+nomad_user2 = User.create!(email: "shstyjllad@gmail.com", password: "password", password_confirmation: "password")
+nomad_user3 = User.create!(email: "shrthd@gmail.com", password: "password", password_confirmation: "password")
+nomad_user4 = User.create!(email: "shsdgestad@gmail.com", password: "password", password_confirmation: "password")
+nomad_user5 = User.create!(email: "shssrylad@gmail.com", password: "password", password_confirmation: "password")
+nomad_user6 = User.create!(email: "shsdsryd@gmail.com", password: "password", password_confirmation: "password")
+
+nomad_users = [nomad_user1, nomad_user2, nomad_user3, nomad_user4, nomad_user5, nomad_user6]
+
 
 barrios = [
   "Barrio Barceloneta", "Vecindario Sants de Barcelona", "Áreas Bogatell", 
@@ -52,61 +70,71 @@ cafes = [
     image_url: "https://i.pinimg.com/564x/49/d2/f6/49d2f636056ce63c3d6732c5c394f328.jpg",
     name: "Stylish Juice & Tea", location: "#{barrios.sample}, Barcelona, Spain",
     opening_times: "9:00 A.M. Monday to Friday",
-    owed_money: debt.sample
+    owed_money: debt.sample,
+    user: user_cafe1
   },
   {
     image_url: "https://i.pinimg.com/564x/0d/c3/34/0dc3340f70aa89fc897fa67c36ecf254.jpg",
     name: "Common Room", location: "#{barrios.sample}, Barcelona, Spain",
     opening_times: "9:00 A.M. Monday to Friday",
-    owed_money: debt.sample
+    owed_money: debt.sample,
+    user: user_cafe2
   },
   {
     image_url: "https://i.pinimg.com/564x/e9/46/de/e946de53c0276f14a2853af418225c98.jpg",
     name: "R Art of Coffe", location: "#{barrios.sample}, Barcelona, Spain",
     opening_times: "9:00 A.M. Monday to Friday",
-    owed_money: debt.sample
+    owed_money: debt.sample,
+    user: user_cafe3
   },
   {
     image_url: "https://i.pinimg.com/564x/78/4d/04/784d04ad67d3c6599ad23b2a6adbea1d.jpg",
     name: "Starbucks", location: "#{barrios.sample}, Barcelona, Spain",
     opening_times: "9:00 A.M. Monday to Friday",
-    owed_money: debt.sample
+    owed_money: debt.sample,
+    user: user_cafe4
   },
   {
     image_url: "https://i.pinimg.com/564x/74/1f/5f/741f5fcf6578d2e39f0eae810641b410.jpg",
     name: "Doctor's Calligraphy", location: "#{barrios.sample}, Barcelona, Spain",
     opening_times: "9:00 A.M. Monday to Friday",
-    owed_money: debt.sample
+    owed_money: debt.sample,
+    user: user_cafe5
   },
   {
     image_url: "https://i.pinimg.com/564x/8c/ac/a3/8caca3908bbcd48b1202eb9b94b8309f.jpg",
     name: "MY COFFE", location: "#{barrios.sample}, Barcelona, Spain",
     opening_times: "9:00 A.M. Monday to Friday",
-    owed_money: debt.sample
+    owed_money: debt.sample,
+    user: user_cafe6
   },
   {
     image_url: "https://i.pinimg.com/564x/10/a0/23/10a02329caca2b983bca534f0a658ac9.jpg",
     name: "CRAFT", location: "#{barrios.sample}, Barcelona, Spain",
     opening_times: "9:00 A.M. Monday to Friday",
-    owed_money: debt.sample
+    owed_money: debt.sample,
+    user: user_cafe7
   },
   {
     image_url: "https://i.pinimg.com/564x/3e/28/82/3e2882a7e05a2467f9e05877f7a49f6c.jpg",
     name: "Coffe", location: "#{barrios.sample}, Barcelona, Spain",
     opening_times: "9:00 A.M. Monday to Friday",
-    owed_money: debt.sample
+    owed_money: debt.sample,
+    user: user_cafe8
   },
   {
     image_url: "https://i.pinimg.com/564x/af/e5/d1/afe5d1dca4fae869694cc0d64a7c5b85.jpg",
     name: ".RAW", location: "#{barrios.sample}, Barcelona, Spain",
     opening_times: "9:00 A.M. Monday to Friday",
-    owed_money: debt.sample
+    owed_money: debt.sample,
+    user: user_cafe9
   },
   {
     image_url: "https://i.pinimg.com/564x/98/7e/b2/987eb21905705119e0d4c20de6b97712.jpg",
     name: "In Coffe we trust", location: "#{barrios.sample}, Barcelona, Spain",
     opening_times: "9:00 A.M. Monday to Friday",
-    owed_money: debt.sample
+    owed_money: debt.sample,
+    user: user_cafe10
   },
 ]
 
@@ -122,14 +150,15 @@ reviews = [
 # We iterate over the cafes array created earlier and for every one of them, we
 # grab a specific part, and use it to create a Cafe
 cafes.each do |cafe|
-  new_user = User.all.sample
   new_cafe = Cafe.create(
     name: cafe[:name], 
     location: cafe[:location], 
     opening_times: cafe[:opening_times], 
-    owed_money:[:owed_money],
-    user: new_user
+    owed_money: cafe[:owed_money],
+    user: cafe[:user]
+
   )
+
   file = URI.open(cafe[:image_url])
   # new_one.photo.attach(file)
   new_cafe.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
@@ -155,7 +184,7 @@ end
 Table.all.each do |table|
   new_booking = Booking.create!(
     # Same as line 128
-    user: User.all.sample,
+    user: nomad_users.sample,
     table: table,
     start_time: start_times.sample,
     end_time: end_times.sample,
