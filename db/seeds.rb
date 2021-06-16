@@ -17,6 +17,8 @@ Cafe.destroy_all
 puts "Destroying all users"
 User.destroy_all
 
+
+
 require "open-uri"
 
 user_cafe1 = User.create!(email: "adrewkin@outlook.com", password: "password", password_confirmation: "password")
@@ -53,8 +55,8 @@ barrios = [
 debt = (0..100).to_a
 min_debt = (1..10).to_a
 seating = (2..6).to_a
-start_times = ["8", "10", "12"]
-end_times = ["14", "16", "18"]
+start_times = [8, 10, 12]
+end_times = [14, 16, 18]
 descriptions = [
   "Table by the window", 
   "Table by the corner", 
