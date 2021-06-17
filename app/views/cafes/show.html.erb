@@ -57,8 +57,27 @@
 
   <div data-tabsshow-target="seereviews">
     <div class= "container py-5">
+      <% @user_reviews.each do |review| %>
+      <ul>
+        <li>
+          <% review.rating.times do %>
+          <i class="fas fa-star"></i>
+          <% end %>
+        </li>
+        <div>
+            <li>
+              <%= review.content %>
+            </li>
+        </div>
+      </ul>
+        <div class="link">
+          <% if review.booking.user == current_user %>
+            <%= link_to 'Delete', review_path(review), method: :delete, remote:true  %>
+          <% end %>
+        </div>
+      <% end -%>
 
-      <% @cafe.reviews.each do |review| %>
+      <% @other_reviews.each do |review| %>
       <ul>
         <li>
           <% review.rating.times do %>
@@ -79,6 +98,5 @@
       <% end -%>
     </div>
   </div>
-
 </div>
 

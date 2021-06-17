@@ -49,6 +49,10 @@ class CafesController < ApplicationController
     else
       @cafe_credits ="from #{min_credits}€ to #{max_credits}€ /h/table (dependent on table size)"
     end
+
+    @user_reviews = @cafe.reviews.select { |review| review.booking.user == current_user }
+    @other_reviews = @cafe.reviews.select { |review| review.booking.user != current_user }
+    @reviews = @user_reviews + @other_reviews
   end
 
   def new

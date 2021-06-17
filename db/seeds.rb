@@ -302,16 +302,17 @@ cafes.each do |cafe|
 
   # We create a Table nested inside the cafes iteration to create one for every cafe
   # we also create
-  new_table = Table.create!(
-    # In the next line, we can skip writing the "id" part for both of them, since they already reference eachother in the models
-    # and it's smart enough to figure out the connection
-    cafe: new_cafe,
-    spots: seating.sample,
-    min_credits: min_debt.sample,
-    seat: Table::SEAT.sample,
-    name: descriptions.sample
-  )
-
+  5.times do 
+    new_table = Table.create!(
+      # In the next line, we can skip writing the "id" part for both of them, since they already reference eachother in the models
+      # and it's smart enough to figure out the connection
+      cafe: new_cafe,
+      spots: seating.sample,
+      min_credits: min_debt.sample,
+      seat: Table::SEAT.sample,
+      name: descriptions.sample
+    )
+  end
 end
 
 # We create a booking for every table since bookings belong to tables
