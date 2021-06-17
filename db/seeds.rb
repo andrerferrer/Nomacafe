@@ -35,6 +35,7 @@ user_cafe1 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample
+  nomacafe_type: "cafe"
 )
 # user_cafe1.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
 # user_cafe1.save!
@@ -45,6 +46,7 @@ user_cafe2 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample
+  nomacafe_type: "cafe"
 )
 # user_cafe2.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
 # user_cafe2.save!
@@ -55,6 +57,7 @@ user_cafe3 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample
+  nomacafe_type: "cafe"
 )
 # user_cafe3.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
 # user_cafe3.save!
@@ -65,6 +68,7 @@ user_cafe4 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample
+  nomacafe_type: "cafe"
 )
 # user_cafe4.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
 # user_cafe4.save!
@@ -75,6 +79,7 @@ user_cafe5 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample
+  nomacafe_type: "cafe"
 )
 # user_cafe5.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
 # user_cafe5.save!
@@ -85,6 +90,7 @@ user_cafe6 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample
+  nomacafe_type: "cafe"
 )
 # user_cafe6.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
 # user_cafe6.save!
@@ -95,6 +101,7 @@ user_cafe7 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample
+  nomacafe_type: "cafe"
 )
 # user_cafe7.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
 # user_cafe7.save!
@@ -105,6 +112,7 @@ user_cafe8 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample
+  nomacafe_type: "cafe"
 )
 # user_cafe8.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
 # user_cafe8.save!
@@ -115,6 +123,7 @@ user_cafe9 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample
+  nomacafe_type: "cafe"
 )
 # user_cafe9.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
 # user_cafe9.save!
@@ -125,6 +134,7 @@ user_cafe10 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample
+  nomacafe_type: "cafe"
 )
 # user_cafe10.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
 # user_cafe10.save!
@@ -135,6 +145,7 @@ nomad_user1 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample
+  nomacafe_type: "nomad"
 )
 # nomad_user1.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
 # nomad_user1.save!
@@ -145,6 +156,7 @@ nomad_user2 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample
+  nomacafe_type: "nomad"
 )
 # nomad_user2.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
 # nomad_user2.save!
@@ -155,6 +167,7 @@ nomad_user3 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample
+  nomacafe_type: "nomad"
 )
 # nomad_user3.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
 # nomad_user3.save!
@@ -165,6 +178,7 @@ nomad_user4 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample
+  nomacafe_type: "nomad"
 )
 # nomad_user4.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
 # nomad_user4.save!
@@ -175,6 +189,7 @@ nomad_user5 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample
+  nomacafe_type: "nomad"
 )
 # nomad_user5.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
 # nomad_user5.save!
@@ -185,6 +200,7 @@ nomad_user6 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample
+  nomacafe_type: "nomad"
 )
 # nomad_user6.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
 # nomad_user6.save!

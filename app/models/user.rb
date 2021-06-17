@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_one :cafe, dependent: :destroy
   has_one_attached :photo
+  validates :nomacafe_type, presence: true, inclusion: {in: ["cafe", "nomad"]}
 
   has_many :favourites
   has_many :favourite_cafes, source: :favouritable, source_type: "Cafe", through: :favourites, foreign_key: :favouritable_id
