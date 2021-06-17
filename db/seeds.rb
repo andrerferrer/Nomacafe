@@ -26,12 +26,15 @@ require "open-uri"
 # user_cafe.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
 # user_cafe.save!
 
+usernames = ["thedeparted", "sauce", "pumpkins", "composition", "greatsquare", "normanbates", "ocean", "thesting", "blackeye", "bat"]
+
 puts "Creating users!"
 
 user_cafe1 = User.create!(
   email: "adrewkin@outlook.com",
   password: "password",
-  password_confirmation: "password"
+  password_confirmation: "password",
+  user_name: usernames.sample
 )
 # user_cafe1.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
 # user_cafe1.save!
@@ -40,7 +43,8 @@ user_cafe1 = User.create!(
 user_cafe2 = User.create!(
   email: "lacuevafortitcarlos@gmail.com",
   password: "password",
-  password_confirmation: "password"
+  password_confirmation: "password",
+  user_name: usernames.sample
 )
 # user_cafe2.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
 # user_cafe2.save!
@@ -49,7 +53,8 @@ user_cafe2 = User.create!(
 user_cafe3 = User.create!(
   email: "sassia93@hotmail.com",
   password: "password",
-  password_confirmation: "password"
+  password_confirmation: "password",
+  user_name: usernames.sample
 )
 # user_cafe3.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
 # user_cafe3.save!
@@ -58,7 +63,8 @@ user_cafe3 = User.create!(
 user_cafe4 = User.create!(
   email: "shadpourmillad@gmail.com",
   password: "password",
-  password_confirmation: "password"
+  password_confirmation: "password",
+  user_name: usernames.sample
 )
 # user_cafe4.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
 # user_cafe4.save!
@@ -67,7 +73,8 @@ user_cafe4 = User.create!(
 user_cafe5 = User.create!(
   email: "asgs@outlook.com",
   password: "password",
-  password_confirmation: "password"
+  password_confirmation: "password",
+  user_name: usernames.sample
 )
 # user_cafe5.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
 # user_cafe5.save!
@@ -76,7 +83,8 @@ user_cafe5 = User.create!(
 user_cafe6 = User.create!(
   email: "lacuevag@gmail.com",
   password: "password",
-  password_confirmation: "password"
+  password_confirmation: "password",
+  user_name: usernames.sample
 )
 # user_cafe6.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
 # user_cafe6.save!
@@ -85,7 +93,8 @@ user_cafe6 = User.create!(
 user_cafe7 = User.create!(
   email: "sasssgf@hotmail.com",
   password: "password",
-  password_confirmation: "password"
+  password_confirmation: "password",
+  user_name: usernames.sample
 )
 # user_cafe7.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
 # user_cafe7.save!
@@ -94,7 +103,8 @@ user_cafe7 = User.create!(
 user_cafe8 = User.create!(
   email: "shaddsg@gmail.com",
   password: "password",
-  password_confirmation: "password"
+  password_confirmation: "password",
+  user_name: usernames.sample
 )
 # user_cafe8.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
 # user_cafe8.save!
@@ -103,7 +113,8 @@ user_cafe8 = User.create!(
 user_cafe9 = User.create!(
   email: "afdb@outlook.com",
   password: "password",
-  password_confirmation: "password"
+  password_confirmation: "password",
+  user_name: usernames.sample
 )
 # user_cafe9.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
 # user_cafe9.save!
@@ -112,7 +123,8 @@ user_cafe9 = User.create!(
 user_cafe10 = User.create!(
   email: "lasdgarlos@gmail.com",
   password: "password",
-  password_confirmation: "password"
+  password_confirmation: "password",
+  user_name: usernames.sample
 )
 # user_cafe10.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
 # user_cafe10.save!
@@ -121,7 +133,8 @@ user_cafe10 = User.create!(
 nomad_user1 = User.create!(
   email: "sadsgf@hotmail.com",
   password: "password",
-  password_confirmation: "password"
+  password_confirmation: "password",
+  user_name: usernames.sample
 )
 # nomad_user1.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
 # nomad_user1.save!
@@ -130,7 +143,8 @@ nomad_user1 = User.create!(
 nomad_user2 = User.create!(
   email: "shstyjllad@gmail.com",
   password: "password",
-  password_confirmation: "password"
+  password_confirmation: "password",
+  user_name: usernames.sample
 )
 # nomad_user2.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
 # nomad_user2.save!
@@ -139,7 +153,8 @@ nomad_user2 = User.create!(
 nomad_user3 = User.create!(
   email: "shrthd@gmail.com",
   password: "password",
-  password_confirmation: "password"
+  password_confirmation: "password",
+  user_name: usernames.sample
 )
 # nomad_user3.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
 # nomad_user3.save!
@@ -148,7 +163,8 @@ nomad_user3 = User.create!(
 nomad_user4 = User.create!(
   email: "shsdgestad@gmail.com",
   password: "password",
-  password_confirmation: "password"
+  password_confirmation: "password",
+  user_name: usernames.sample
 )
 # nomad_user4.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
 # nomad_user4.save!
@@ -157,7 +173,8 @@ nomad_user4 = User.create!(
 nomad_user5 = User.create!(
   email: "shssrylad@gmail.com",
   password: "password",
-  password_confirmation: "password"
+  password_confirmation: "password",
+  user_name: usernames.sample
 )
 # nomad_user5.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
 # nomad_user5.save!
@@ -166,7 +183,8 @@ nomad_user5 = User.create!(
 nomad_user6 = User.create!(
   email: "shsdsryd@gmail.com",
   password: "password",
-  password_confirmation: "password"
+  password_confirmation: "password",
+  user_name: usernames.sample
 )
 # nomad_user6.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
 # nomad_user6.save!
