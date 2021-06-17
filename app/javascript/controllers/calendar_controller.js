@@ -20,14 +20,12 @@ export default class extends Controller {
 
   connect() {
     this.initCalendar();
-    console.log("yoyoyoyo")
+    this.initColorChange();
+
   }
 
   initCalendar() {
     let bookings = JSON.parse(this.elementTarget.dataset.bookings)
-    console.log(bookings)
-
-    console.log(bookings)
     let calendar = new Calendar(this.elementTarget, {
       plugins: [dayGridPlugin, timeGridPlugin, listPlugin],
       initialView: 'dayGridMonth',
@@ -39,5 +37,21 @@ export default class extends Controller {
       events: bookings
     });
     calendar.render();
+  }
+
+  initColorChange() {
+    const calendarListIcon = document.querySelector(".fc-listWeek-button")
+    calendarListIcon.addEventListener("click", () => {
+      const calendarEvents = document.querySelectorAll(".fc-list-event")
+      calendarEvents.forEach(event => {
+        const calendarIcon = event.querySelector(".fc-list-event-dot")
+        const calendarText = event.querySelector(".fc-list-event-title")
+        if (calendarText.innerHTML.includes("accepted")) {
+          calendarIcon.style.borderColor = "green"
+        } else if (calendarText.innerHTML.includes("pending")) {
+          calendarIcon.style.borderColor = "red"
+        }
+      })
+    })
   }
 }
