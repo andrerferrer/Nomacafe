@@ -1,52 +1,127 @@
+<section class="single-cafe">
+  <div class="inner">
 
-
-<!-- NEW CODE ABOVE WORKING CODE BELOW ABOVE CODE INPUTTED IN BOOKING SHOW-->
-
-<!--KEEP BELOW CODE FOR CAFE DAHSBOARD-->
-
-  <div class="card-trip">
-    <% if @cafe.photo.attached? %>
-      <img src="<%= cl_image_path @cafe.photo.key %>" />
-    <% else %>
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-    <% end %>
-
-    <div class="card-trip-infos">
-      <div>
-        <h2> <%= @cafe.name %></h2>
-        <p> <%= @cafe.location %></p>
+      <div class="thumb" style="background:url('<%= cl_image_path @cafe.photo.key %>');">
       </div>
-      <h2 class="card-trip-pricing">Minimim credits applied: <%=@cafe_credits  %></h2>
+      <div class="tabs-container">
+        <input class="no" checked="checked" id="tab1" type="radio" name="tabs" />
+        <input class="no" id="tab2" type="radio" name="tabs" />
+        <input class="no" id="tab3" type="radio" name="tabs" />
+        <div class="caffee-tabs">
+          <ul>
+            <li>
+
+              <label for="tab1">Info</label>
+            </li>
+            <li>
+
+              <label for="tab2">Menu</label>
+            </li>
+            <li>
+              <label for="tab3">Nomad Reviews</label>
+            </li>
+          </ul>
+        </div>
+        <div class="tab-container">
+          <div class="tab1 tab-info tab-item">
+            <div class="title-tab">
+              <h3><%= @cafe.name %></h3>
+              <span class="cafe-info"><%= @cafe.location %></span>
+            </div>
+            <div class="cafe-review">
+              <div class="inner">
+                <ul>
+                  <li>
+                    <div class="">
+                      <span class="column">Nomad Review:</span>
+                      <span class="column">4.9[S]</span>
+                      <span class="column">(27)</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="">
+                      <span class="column">Your Reviews:</span>
+                      <span class="column">5.0[S]</span>
+                      <span class="column">(27)</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="">
+                      <span class="column">Google Reviews:</span>
+                      <span class="column">5.0[S]</span>
+                      <span class="column">(27)</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!--[-] Reviews -->
+            <!--[+] Caffee Policy -->
+            <div class="caffee-policy">
+              <span>Minimim credits consumption: <%=@cafe_credits%></span>
+            </div>
+
+            <form class="" action="index.html" method="post">
+              <div class="slots">
+                <ul>
+                  <li>
+                    <div class="slot-title">
+                      <div class="">Table 1-2 Spots</div>
+                      <div class="">
+                        <span>[SVG:WIFI]</span>
+                        <span>[SVG:ENCHUFE]</span>
+                        <span>[SVG:SUN]</span>
+                        <span>[SVG:SOFA]</span>
+                      </div>
+                      <div class="expand-slot">
+                        <input type="checkbox" name="" value="">
+                      </div>
+                    </div>
+                    <div class="slot-container">
+                      <div class="slot-header">
+                        <div class="slot-data">
+                          <span>
+                            Monday 29th of May
+                            Min credits: 5€/h
+                          </span>
+                        </div>
+                        <div class="slot-">
+                          <span>
+                            Pick your slot(s):
+                          </span>
+                        </div>
+                      </div>
+                      <div class="time">8AM</div>
+                      <div class="slot-info">
+                        <span class="spots-info">1/2 spots left - join their table</span>
+                        <div class="nomad-profile">
+                          <div class="thumb"></div>
+                          <span><a href="#">Check out Nomad profile(s)</a></span>
+                        </div>
+                        <input type="checkbox" name="" value="">
+                      </div>
+                      <div class="slot-button">
+                        <button type="button" name="button"></button>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </form>
+
+
+  <!--[-] TABLE BOOK -->
+        </div>
+      </div>
     </div>
   </div>
+</section>
+<!--[-] SINGLE CAFE -->
 
 
-  <div data-controller="tabsshow">
 
-    <div class="cafe-tabs">
-        <ul class="list-inline tabs-underlined">
-          <li>
-            <div class="tab-underlined" data-action="click->tabsshow#bookings" data-tabsshow-target="booktab">Book your spot</div>
-          </li>
-          <li>
-            <div class="tab-underlined" data-action="click->tabsshow#menu" data-tabsshow-target="menutab">Menu</div>
-          </li>
-          <li>
-            <div class="tab-underlined" data-action="click->tabsshow#reviews"data-tabsshow-target="reviewtab"> Nomad Reviews</div>
-          </li>
-        </ul>
-     </div>
 
-  <div class="show-bookspot" data-tabsshow-target="bookspot">
-    <% @tables.each do |table| %>
-      <h5><%= table.name %></h5>
-        <p> <strong>Number of Spots: </strong> <%= table.spots %>
-            <strong>Type of Seats: </strong> <%= table.seat %>
-            <strong>Minimum Credits: </strong><%= table.min_credits %>
-         </p>
-    <% end %>
-    <p><%= link_to "Back to all cafes", cafes_path, remote:true  %></p>
-  </div>
+
 
 
   <div data-tabsshow-target="showmenu">

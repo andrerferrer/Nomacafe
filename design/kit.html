@@ -1,46 +1,7 @@
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
 <section class="ui-wrap">
 <style media="screen">
-  /* UI - HEADER */
 
-  .header-nav {
-    background: #fff;
-    position: sticky;
-    top: 0px;
-    display: flex;
-    justify-content: space-between;
-    box-shadow: rgb(0 0 0 / 20%) 0px 0.0625rem 0.1875rem 0px;
-    z-index: 999999;
-    padding-left: 30px;
-    line-height: 48px;
-    padding-right: 30px;
-}
-
-.burger-menu, .profile-hedader, .header-bell {
-    display: grid;
-    align-content: center;
-    align-self: center;
-}
-.profile-thumb {
-    display: flex;
-    align-items: center;
-}
-.profile-thumb .thumb {
-    width: 32px;
-    height: 32px;
-    background-repeat: no-repeat!important;
-    background-size: cover!important;
-    border-radius: 50%;
-}
- .bell-icon svg {
-    width: 21px;
-    fill: #16181b;
-}
-  /* UI - HEADER */
-  * {
-    font-family: 'Poppins', sans-serif;
-  }
   section section {
       height: 80vh;
       border: solid 1px #000;
@@ -49,234 +10,16 @@
       max-width: 30%;
       overflow: scroll;
   }
-.single-cafe .inner .thumb {
-    width: 100%;
-    height: 320px;
-    /* background-size: cover; */
-    background-size: cover!important;
-    background-position: center!important;
-}
-.caffee-tabs ul {
-    margin: 0px;
-    list-style: none;
-    display: flex;
-    width: 100%;
-    padding: 0px;
-    justify-content: space-around;
-    line-height: 52px;
-    background: #800E13;
-    color: #fff;
-}
 
-/* [TABS CONTROLS] */
-.no {
-  display:none;
-}
-.tab-container .tab-item {
-  display: none;
-}
-
-#tab1:checked ~ .tab-container .tab1,
-#tab2:checked ~ .tab-container .tab2,
-#tab3:checked ~ .tab-container .tab3 {
-  display: block!important;
-}
-.caffee-tabs ul li:hover, .caffee-tabs ul li label {
-    cursor: pointer;
-}
-/* END [TABS CONTROLS] */
-
-/* BURGER MENU */
-.expandet-burger{
-    transform: translate(-100vw);
-    display: none;
-}
-#burger:checked ~ .burger-menu .expandet-burger{
-  transform: translate(0px);
-  display: block;
-  width: calc(100% / 1.618);
-  height: 100vh;
-  position: absolute;
-  background: #fff;
-  left: 0px;
-  top: 0px;
-}
-.expandet-burger label svg {
-    width: 22px;
-    height: 22px;
-}
-.expandet-burger label {
-    width: 48px;
-    height: 48px;
-    display: grid;
-    align-items: center;
-    align-content: center;
-    padding-left: 20px;
-}
-.expandet-burger ul {
-    list-style: none;
-    padding: 0px;
-    margin: 0px;
-}
-.expandet-burger ul li {
-    line-height: 50px;
-    border-bottom: solid 1px #ccc;
-    padding-left: 20px;
-}
-.expandet-burger ul li a {
-    font-size: 15px;
-    color: #000;
-    text-decoration: none;
-}
-.expandet-burger ul li:hover {
-    background: #efefef;
-}
-/* BURGER MENU */
-
-/*START - SINGLE CAFFEE - BODY*/
-.tab-item .title-tab {
-    padding-left: 20px;
-}
-/*END - SINGLE CAFFEE - BODY */
 </style>
+
+
+
+
+
 <!--[+] SINGLE CAFE -->
-<section class="single-cafe">
-  <!--[+] HEADER -->
-  <nav class="header-nav">
-  <!--[+] BURGER MENU -->
-  <input class="no" id="burger" type="radio" name="burger" />
-  <input class="no" id="burger-close" type="radio" name="burger" />
-  <div class="burger-menu">
+<!-- <section class="single-cafe">
 
-    <div class="svg-icon">
-    <label for="burger">
-      <svg xmlns="http://www.w3.org/2000/svg" height="23px" viewBox="0 -53 384 384" width="23px"><path d="m368 154.667969h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"/><path d="m368 32h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"/><path d="m368 277.332031h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"/></svg>
-    </label>
-    </div>
-    <div class="expandet-burger">
-      <label for="burger-close">
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;" xml:space="preserve">
-<g>
-	<g>
-		<path d="M300.188,246L484.14,62.04c5.06-5.064,7.852-11.82,7.86-19.024c0-7.208-2.792-13.972-7.86-19.028L468.02,7.872    c-5.068-5.076-11.824-7.856-19.036-7.856c-7.2,0-13.956,2.78-19.024,7.856L246.008,191.82L62.048,7.872    c-5.06-5.076-11.82-7.856-19.028-7.856c-7.2,0-13.96,2.78-19.02,7.856L7.872,23.988c-10.496,10.496-10.496,27.568,0,38.052    L191.828,246L7.872,429.952c-5.064,5.072-7.852,11.828-7.852,19.032c0,7.204,2.788,13.96,7.852,19.028l16.124,16.116    c5.06,5.072,11.824,7.856,19.02,7.856c7.208,0,13.968-2.784,19.028-7.856l183.96-183.952l183.952,183.952    c5.068,5.072,11.824,7.856,19.024,7.856h0.008c7.204,0,13.96-2.784,19.028-7.856l16.12-16.116    c5.06-5.064,7.852-11.824,7.852-19.028c0-7.204-2.792-13.96-7.852-19.028L300.188,246z"/>
-	</g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-</svg>
-      </label>
-      <ul>
-        <li>
-          <a href="#">
-            Home
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            Dashboard
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            Profile
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            Config
-          </a>
-        </li>
-
-      </ul>
-    </div>
-  </div>
-  <!--[-] BURGER MENU -->
-  <!--[+] PROFILE AVATAR-->
-  <div class="profile-hedader">
-    <div class="profile-thumb">
-      <div class="thumb" style="background:url('https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
-      <div class="profile-name">@Genrik</div>
-    </div>
-  </div>
-  <!--[-] PROFILE AVATAR-->
-  <!--[+] BELL NOTIFICATION -->
-  <div class="header-bell">
-    <span class="bell-icon">
-      <a href="#">
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 459.334 459.334" style="enable-background:new 0 0 459.334 459.334;" xml:space="preserve">
-<g>
-	<g>
-		<g>
-			<path d="M175.216,404.514c-0.001,0.12-0.009,0.239-0.009,0.359c0,30.078,24.383,54.461,54.461,54.461     s54.461-24.383,54.461-54.461c0-0.12-0.008-0.239-0.009-0.359H175.216z"/>
-			<path d="M403.549,336.438l-49.015-72.002c0-22.041,0-75.898,0-89.83c0-60.581-43.144-111.079-100.381-122.459V24.485     C254.152,10.963,243.19,0,229.667,0s-24.485,10.963-24.485,24.485v27.663c-57.237,11.381-100.381,61.879-100.381,122.459     c0,23.716,0,76.084,0,89.83l-49.015,72.002c-5.163,7.584-5.709,17.401-1.419,25.511c4.29,8.11,12.712,13.182,21.887,13.182     H383.08c9.175,0,17.597-5.073,21.887-13.182C409.258,353.839,408.711,344.022,403.549,336.438z"/>
-		</g>
-	</g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-</svg>
-      </a>
-    </span>
-  </div>
-  <!--[-] BELL NOTIFICATION -->
-  </nav>
-  <!--[-] HEADER -->
 
   <div class="inner">
 
@@ -334,14 +77,14 @@
               </ul>
             </div>
           </div>
-          <!--[-] Reviews -->
+         [-] Reviews -->
           <!--[+] Caffee Policy -->
-          <div class="caffee-policy">
+          <!-- <div class="caffee-policy">
             <span>Minimim credits consumption: 5€/h/table (2 spots) or 8€/h/table (4 spots)</span>
-          </div>
+          </div> -->
           <!--[-] Caffee Policy -->
           <!--[+] TABLE BOOK-->
-          <form class="" action="index.html" method="post">
+          <!-- <form class="" action="index.html" method="post">
             <div class="slots">
               <ul>
                 <li>
@@ -387,9 +130,9 @@
                 </li>
               </ul>
             </div>
-          </form>
+          </form> -->
           <!--[-] TABLE BOOK -->
-        </div>
+        <!-- </div>
         <div id="tab2" class="tab2 tab-info tab-item">
           <div class="title-tab">
             <h3>adsadsad</h3>
@@ -421,15 +164,15 @@
                 </li>
               </ul>
             </div>
-          </div>
+          </div> -->
           <!--[-] Reviews -->
           <!--[+] Caffee Policy -->
-          <div class="caffee-policy">
+          <!-- <div class="caffee-policy">
             <span>Minimim credits consumption: 5€/h/table (2 spots) or 8€/h/table (4 spots)</span>
-          </div>
+          </div> -->
           <!--[-] Caffee Policy -->
           <!--[+] TABLE BOOK-->
-          <form class="" action="index.html" method="post">
+          <!-- <form class="" action="index.html" method="post">
             <div class="slots">
               <ul>
                 <li>
@@ -475,9 +218,9 @@
                 </li>
               </ul>
             </div>
-          </form>
+          </form> -->
           <!--[-] TABLE BOOK -->
-        </div>
+        <!-- </div>
         <div id="tab3" class="tab2 tab-info tab-item">
           <div class="title-tab">
             <h3>adsadsad</h3>
@@ -509,15 +252,15 @@
                 </li>
               </ul>
             </div>
-          </div>
+          </div> -->
           <!--[-] Reviews -->
           <!--[+] Caffee Policy -->
-          <div class="caffee-policy">
+          <!-- <div class="caffee-policy">
             <span>Minimim credits consumption: 5€/h/table (2 spots) or 8€/h/table (4 spots)</span>
-          </div>
+          </div> -->
           <!--[-] Caffee Policy -->
           <!--[+] TABLE BOOK-->
-          <form class="" action="index.html" method="post">
+         <!--  <form class="" action="index.html" method="post">
             <div class="slots">
               <ul>
                 <li>
@@ -563,14 +306,28 @@
                 </li>
               </ul>
             </div>
-          </form>
+          </form> -->
           <!--[-] TABLE BOOK -->
-        </div>
+       <!--  </div>
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!--[-] SINGLE CAFE -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!--[+] SELECT YOUR PREFERENCES -->
 <section class="select-preferences">
   <div class="inner">
