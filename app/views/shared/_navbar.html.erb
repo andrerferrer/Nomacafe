@@ -90,30 +90,29 @@
       </label>
       <ul>
         <li>
-          <a href="#">
-            Home
-          </a>
+          <a> <%= link_to 'Account', dashboard_path  %> </a>
         </li>
         <li>
-          <a href="#">
-            Dashboard
-          </a>
+          <a> <%= link_to "Favourites", cafes_path%> </a>
         </li>
         <li>
-          <a href="#">
-            Profile
-          </a>
+          <a> <%= link_to "Credits", cafes_path %> </a>
         </li>
         <li>
-          <a href="#">
-            Config
-          </a>
+          <a> <%= link_to "Booking History", cafes_path %></a>
+        </li>
+        <li>
+          <a> <%= link_to "Help & FAQ", cafes_path  %> </a>
+        </li>
+        <li>
+          <a> <%= link_to "Logout", cafes_path  %> </a>
         </li>
 
       </ul>
     </div>
   </div>
   <!--[-] BURGER MENU -->
+
   <!--[+] PROFILE AVATAR-->
   <div class="profile-hedader">
     <div class="profile-thumb">
