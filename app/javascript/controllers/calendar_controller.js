@@ -34,8 +34,16 @@ export default class extends Controller {
         center: 'title',
         right: 'dayGridMonth,timeGridWeek,listWeek'
       },
-      events: bookings
+      events: bookings,
+      eventContent: function(info) {
+        console.log(info)
+        console.log(info.event)
+        console.log(info.event.extendedProps)
+        console.log(info.event.extendedProps.imageUrl)
+        // continue from this -> https://stackoverflow.com/a/63902293
+      }
     });
+    
     calendar.render();
   }
 
