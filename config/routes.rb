@@ -19,5 +19,6 @@ Rails.application.routes.draw do
 
   resources :dashboard, only: [:show]
   resources :reviews, only: [:destroy]
+  resources :users, only: [:show]
 end
 
