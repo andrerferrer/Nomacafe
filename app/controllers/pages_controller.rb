@@ -9,8 +9,14 @@ class PagesController < ApplicationController
 
     unless current_user.is_cafe_owner?
 
-
-    @bookings = current_user.bookings.map{|booking| {title: booking.booking_headline, start: booking.start_time.strftime("%Y-%m-%d"), end: booking.end_time.strftime("%Y-%m-%d")}}
+    @bookings = current_user.bookings.map do |booking| 
+      {
+        title: booking.booking_headline, 
+        start: booking.start_time.strftime("%Y-%m-%d"), 
+        end: booking.end_time.strftime("%Y-%m-%d"),
+        imageUrl: helpers.cl_image_path(booking.table.cafe.photo.key) # https://stackoverflow.com/a/11161692
+      }
+    end
 
     start_date = params.fetch(:start_date, Date.today).to_date
     @date_range = (start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
